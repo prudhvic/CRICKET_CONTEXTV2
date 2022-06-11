@@ -1,0 +1,172 @@
+ol {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  width: 300px;
+  margin: 0 auto;
+}
+h1 {
+  color: white;
+  font-weight: 600;
+}
+
+ol li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* position: relative; */
+  margin-top: 1em;
+  flex: 1;
+}
+ol li em {
+  position: relative;
+}
+ol li:not(:last-child) em::after {
+  content: "";
+  /* width: 150%; */
+  top: 50%;
+  transform: translate(0%, -50%);
+  left: 100%;
+  border-radius: 6px;
+  transition: 0.4s;
+
+  height: 5px;
+  background-color: white;
+  position: absolute;
+}
+
+ol li span {
+  /* display: none; */
+  font-weight: bold;
+}
+
+ol li em {
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  transition: 0.4s;
+  font-style: normal;
+}
+ol li.progtrckr-done em::after {
+  animation: moveTo 0.4s;
+  /* transition: 0.3s width; */
+  width: 150%;
+}
+.container {
+  padding: 1em;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.2em;
+}
+.footer-buttons button {
+  padding: 0.4em 0.8em;
+  background-color: black;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+input,
+textarea {
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+}
+.form {
+  display: grid;
+  padding: 1em;
+  gap: 1em;
+  margin: 0 auto;
+}
+textarea {
+  height: 200px;
+  width: 200px;
+}
+select {
+  width: 100%;
+}
+.container-flex {
+  flex-direction: column;
+}
+.container-flex button {
+  padding: 0.4em 0.8em;
+  background-color: black;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1em;
+}
+table,
+tr,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table {
+  width: 300px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+th,
+td {
+  padding: 0.5em;
+}
+.scroll-table {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px;
+  height: 400px;
+  margin: auto;
+}
+.scroll-table::-webkit-scrollbar {
+  background-color: transparent;
+}
+.scroll-table::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.scroll-table::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 6px;
+}
+h1 {
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .form {
+    border: none;
+    max-width: 800px;
+    grid-template-columns: repeat(2, 150px);
+    gap: 0.3em;
+  }
+  /* .flex-1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    width: 100vw;
+  } */
+}
+@keyframes moveTo {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 150%;
+  }
+}
